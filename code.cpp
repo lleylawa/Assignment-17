@@ -4,32 +4,29 @@
 
 using namespace std;
 
-// Function to perform Run-Length Encoding
 void RunLengthEnc(const string& str, ofstream& outputFile) {
     int n = str.size();
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; ++i) {
         int count = 1;
         while (i < n - 1 && str[i] == str[i + 1]) {
-            count++;
-            i++;    
+            ++count;
+            ++i;
         }
-        cout << str[i] << count; // Output to console
-        outputFile << str[i] << count; // Output to file
+        outputFile << str[i] << count;
     }
 }
 
-// Function to perform Run-Length Decrypting
 void RunLengthDecr(const string& str, ofstream& outputFile) {
     int n = str.size();
-    for(int i = 0; i < n; i += 2) {
-        int count = (str[i + 1] - '0') * 10 + (str[i + 2] - '0');
-        if(count == 0) // Handling count 0
-            count = 1;
-        for(int j = 0; j < count; j++) { 
-            cout << str[i];
+    for (int i = 0; i < n; i += 2) {
+        int repetition = (str[i + 1] - '0');
+        if (i + 2 < n && isdigit(str[i + 2])) {
+            repetition = repetition * 10 + (str[i + 2] - '0');
+            ++i; // Skip the next digit
+        }
+        for (int j = 0; j < repetition; ++j) {
             outputFile << str[i];
         }
-        i++; // Move to the next character
     }
 }
 
@@ -53,17 +50,15 @@ int main() {
 
     string line;
     if (choice == 1) {
-        // Encrypting
         while (getline(inputFile, line)) {
             RunLengthEnc(line, outputFile);
         }
     } else if (choice == 2) {
-        // Decrypting
         while (getline(inputFile, line)) {
             RunLengthDecr(line, outputFile);
         }
     } else {
-        cerr << "Invalid choice." << endl;
+        cerr << "Invalid choice. Please enter 1 or 2." << endl;
         return 1;
     }
 
@@ -72,4 +67,3 @@ int main() {
 
     return 0;
 }
-
