@@ -45,7 +45,7 @@ int main() {
 
     int choice;
     cout << "This is Run-Length Encoding" << endl;
-    cout << "Enter 1 for Encrypting or 2 for Decrypting: ";
+    cout << "Enter 1 for Compression or 2 for Decompression: ";
     cin >> choice;
 
     string line;
