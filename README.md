@@ -17,6 +17,7 @@ Algorithm: Parses the input string, reading characters and their repetition coun
 RunLengthEnc: Performs Run-Length Encoding on a given input string.
 RunLengthDecr: Performs Run-Length Decoding on a given input string.
 main: Controls the flow of the program, handles file I/O, user input, and calls the appropriate encoding or decoding function based on user choice.
+
 **Code Blocks:**
 File I/O Handling: Opens input and output files, checks for successful opening.
 User Interface: Displays a menu for the user to choose between compression and decompression.
@@ -24,6 +25,7 @@ Encoding and Decoding: Calls the appropriate function based on the user's choice
 Error Handling: Checks for invalid user input and displays an error message.
 
 **Example usage:**
+
 To compress data:
 
 1. Prepare the data to be compressed and save it in a file named `inputfile.txt`.
