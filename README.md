@@ -27,12 +27,10 @@ The decompression algorithm (`RunLengthDecr`) reads pairs of characters from the
 Prepare the data to be compressed and save it in a file named inputfile.txt.
 Compile the program and execute it.
 When prompted, choose the compression option by typing 1.
-Follow the on-screen instructions to input the text you want to compress.
 The compressed data will be saved in a file named outputfile.txt.
 - To decompress data:
 
 Place the compressed data in a file named inputfile.txt.
 Compile and run the program.
 Select the decompression option when prompted by typing 2.
-Follow the instructions to input the compressed text.
 The decompressed data will be stored in a file named outputfile.txt.
